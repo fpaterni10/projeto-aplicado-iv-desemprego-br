@@ -23,12 +23,6 @@ De forma complementar, também dialoga com:
 </p>
 
 
-## ❓ Pergunta de Pesquisa
-- Como evolui a taxa de desocupação no Brasil por faixas etárias?  
-- É possível prever os próximos períodos com modelos estatísticos (SARIMA/SARIMAX)?  
-- Quais variáveis macroeconômicas influenciam diretamente essas taxas (ex.: SELIC, IPCA)?
-
-
 ## 📊 Fontes de Dados
 - **IBGE – PNAD Contínua Trimestral (PNADCT / SIDRA)**  
   - Tabela 4094: Taxa de desocupação por grupos de idade.  
