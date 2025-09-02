@@ -1,8 +1,10 @@
-# Projeto Aplicado IV – Previsão da Taxa de Desocupação no Brasil
+# PROJETO APLICADO IV - Ciência de Dados EaD - 2025/02
 
+<p align="right">
+  <img src="docs/figuras/mackenzie_logo.jpg" alt="Universidade Presbiteriana Mackenzie" width="220"/>
+</p>
 
-## 🎯 Objetivo do Projeto
-<img src="docs/figuras/mackenzie_logo.jpg" alt="Universidade Presbiteriana Mackenzie" width="260"/>
+**Objetivo:** Desenvolver um produto analítico envolvendo séries temporais. O projeto deve incluir as fases de concepção, implementação e apresentação do projeto para um cliente. Escolher um tema em que os dados são organizados em formato de série temporal.  
 
 ## 🌍 ODS Relacionados
 O projeto está diretamente alinhado ao **ODS 8 – Trabalho decente e crescimento econômico**, pois a taxa de desemprego é um indicador essencial desse objetivo.  
@@ -11,9 +13,11 @@ De forma complementar, também dialoga com:
 - **ODS 9 – Indústria, inovação e infraestrutura**, pela aplicação de ciência de dados e métodos de previsão como instrumentos de inovação analítica.  
 - **ODS 11 – Cidades e comunidades sustentáveis**, já que o desemprego impacta diretamente a qualidade de vida nas cidades e a sustentabilidade social.  
 
-<img src="docs/figuras/sdg_08.png" alt="ODS 8 – Trabalho Decente e Crescimento Econômico" width="120"/>
-<img src="docs/figuras/sdg_09.png" alt="ODS 9 – Indústria, Inovação e Infraestrutura" width="120"/>
-<img src="docs/figuras/sdg_11.png" alt="ODS 11 – Cidades e Comunidades Sustentáveis" width="120"/>
+<p align="center">
+  <img src="docs/figuras/sdg_08.png" alt="ODS 8 – Trabalho Decente e Crescimento Econômico" width="120"/>
+  <img src="docs/figuras/sdg_09.png" alt="ODS 9 – Indústria, Inovação e Infraestrutura" width="120"/>
+  <img src="docs/figuras/sdg_11.png" alt="ODS 11 – Cidades e Comunidades Sustentáveis" width="120"/>
+</p>
 
 
 ## ❓ Pergunta de Pesquisa
