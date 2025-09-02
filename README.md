@@ -100,8 +100,11 @@ Clique nos links abaixo para abrir diretamente no Google Colab:
 ## 👥 Autores
 
 Aline Correa de Araújo – RA: 10414773 – 10414773@mackenzista.com.br
+
 Franciele Paterni – RA: 10414598 – 10414598@mackenzista.com.br
+
 Giovanna Sobral da Silva – RA: 10424600 – 10424600@mackenzista.com.br
+
 Guilherme Soares Frota – RA: 10416060 – 10416060@mackenzista.com.br
 
 - **Professor orientador:** Carlos Scalabrini.  
