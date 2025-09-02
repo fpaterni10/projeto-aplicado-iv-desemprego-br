@@ -2,12 +2,18 @@
 
 
 ## 🎯 Objetivo do Projeto
-Este projeto tem como objetivo analisar e prever a **taxa de desocupação (desemprego)** no Brasil, com recorte principal por **faixa etária**, utilizando **modelos de séries temporais** e **aprendizado de máquina**.  
+<img src="docs/figuras/mackenzie_logo.jpg" alt="Universidade Presbiteriana Mackenzie" width="260"/>
 
-O trabalho segue os **Objetivos de Desenvolvimento Sustentável (ODS)**, com foco em:
-- **ODS 8**: Trabalho decente e crescimento econômico.  
-- **ODS 9**: Indústria, inovação e infraestrutura.  
-- **ODS 11**: Cidades e comunidades sustentáveis.  
+## 🌍 ODS Relacionados
+O projeto está diretamente alinhado ao **ODS 8 – Trabalho decente e crescimento econômico**, pois a taxa de desemprego é um indicador essencial desse objetivo.  
+
+De forma complementar, também dialoga com:  
+- **ODS 9 – Indústria, inovação e infraestrutura**, pela aplicação de ciência de dados e métodos de previsão como instrumentos de inovação analítica.  
+- **ODS 11 – Cidades e comunidades sustentáveis**, já que o desemprego impacta diretamente a qualidade de vida nas cidades e a sustentabilidade social.  
+
+<img src="docs/figuras/sdg_08.png" alt="ODS 8 – Trabalho Decente e Crescimento Econômico" width="120"/>
+<img src="docs/figuras/sdg_09.png" alt="ODS 9 – Indústria, Inovação e Infraestrutura" width="120"/>
+<img src="docs/figuras/sdg_11.png" alt="ODS 11 – Cidades e Comunidades Sustentáveis" width="120"/>
 
 
 ## ❓ Pergunta de Pesquisa
