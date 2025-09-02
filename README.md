@@ -43,7 +43,7 @@ O trabalho segue os **Objetivos de Desenvolvimento Sustentável (ODS)**, com foc
 - **Etapa 4 (28/11):** Modelos finais, previsões, discussão e entrega do artefato.  
 
 ## 📂 Estrutura do Repositório
-projeto-aplicado-iv-desemprego-br/
+"projeto-aplicado-iv-desemprego-br/
 │
 ├── dataset/
 │   ├── brutos/              # Dados originais
@@ -69,7 +69,7 @@ projeto-aplicado-iv-desemprego-br/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-└── requirements.txt
+└── requirements.txt"
 
 
 ## 🚀 Execução dos Notebooks no Colab
