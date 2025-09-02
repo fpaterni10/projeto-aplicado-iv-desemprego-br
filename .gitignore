@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+.ipynb_checkpoints/
+.venv/
+*.pyc
+*.pyo
+*.pyd
+*.DS_Store
+
+# Dados
+dataset/brutos/*
+dataset/tratados/*
+dataset/exog/*.xlsx
+!dataset/brutos/.gitkeep
+!dataset/tratados/.gitkeep
+!dataset/exog/.gitkeep
