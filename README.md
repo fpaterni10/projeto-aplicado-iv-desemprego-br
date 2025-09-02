@@ -59,25 +59,25 @@ De forma complementar, também dialoga com:
 projeto-aplicado-iv-desemprego-br/
 │
 ├── dataset/
-│   ├── brutos/              # Dados originais
-│   ├── tratados/            # Dados tratados
-│   └── exog/                # Variáveis exógenas (ex.: SELIC, IPCA)
+│   ├── brutos/              
+│   ├── tratados/            
+│   └── exog/                
 │
 ├── docs/
-│   ├── artigo/              # Texto/artigo final
-│   └── figuras/             # Figuras e gráficos
+│   ├── artigo/              
+│   └── figuras/             
 │
 ├── notebooks/
-│   ├── entrega1/            # Etapa 1
-│   ├── entrega2/            # Etapa 2
-│   ├── entrega3/            # Etapa 3
-│   ├── entrega4/            # Etapa 4
-│   └── 03_modelo_base.ipynb # Modelo inicial
+│   ├── entrega1/            
+│   ├── entrega2/            
+│   ├── entrega3/            
+│   ├── entrega4/            
+│   └── 03_modelo_base.ipynb
 │
 ├── src/
-│   ├── features/            # Scripts de features
-│   ├── models/              # Scripts de modelos
-│   └── utils/               # Funções auxiliares
+│   ├── features/            
+│   ├── models/              
+│   └── utils/               
 │
 ├── .gitignore
 ├── LICENSE
