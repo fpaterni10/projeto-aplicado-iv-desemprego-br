@@ -1,5 +1,6 @@
 # Projeto Aplicado IV – Previsão da Taxa de Desocupação no Brasil
 
+
 ## 🎯 Objetivo do Projeto
 Este projeto tem como objetivo analisar e prever a **taxa de desocupação (desemprego)** no Brasil, com recorte principal por **faixa etária**, utilizando **modelos de séries temporais** e **aprendizado de máquina**.  
 
@@ -8,10 +9,12 @@ O trabalho segue os **Objetivos de Desenvolvimento Sustentável (ODS)**, com foc
 - **ODS 9**: Indústria, inovação e infraestrutura.  
 - **ODS 11**: Cidades e comunidades sustentáveis.  
 
+
 ## ❓ Pergunta de Pesquisa
 - Como evolui a taxa de desocupação no Brasil por faixas etárias?  
 - É possível prever os próximos períodos com modelos estatísticos (SARIMA/SARIMAX)?  
 - Quais variáveis macroeconômicas influenciam diretamente essas taxas (ex.: SELIC, IPCA)?
+
 
 ## 📊 Fontes de Dados
 - **IBGE – PNAD Contínua Trimestral (PNADCT / SIDRA)**  
@@ -36,14 +39,17 @@ O trabalho segue os **Objetivos de Desenvolvimento Sustentável (ODS)**, com foc
   - Métricas: MAE, MAPE, sMAPE.  
   - Análise de resíduos (ACF, PACF, Ljung-Box).  
 
+
 ## 📅 Cronograma
 - **Etapa 1 (29/08):** Definição do tema, fontes de dados e estrutura do repositório.  
 - **Etapa 2 (26/09):** Referencial teórico, metodologia proposta e cronograma detalhado.  
 - **Etapa 3 (31/10):** Análise exploratória, implementação inicial do modelo, análise de resíduos.  
 - **Etapa 4 (28/11):** Modelos finais, previsões, discussão e entrega do artefato.  
 
+
 ## 📂 Estrutura do Repositório
-"'projeto-aplicado-iv-desemprego-br/
+```
+projeto-aplicado-iv-desemprego-br/
 │
 ├── dataset/
 │   ├── brutos/              # Dados originais
@@ -69,7 +75,8 @@ O trabalho segue os **Objetivos de Desenvolvimento Sustentável (ODS)**, com foc
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-└── requirements.txt"'
+└── requirements.txt
+```
 
 
 ## 🚀 Execução dos Notebooks no Colab
