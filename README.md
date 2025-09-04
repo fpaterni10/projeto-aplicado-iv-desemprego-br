@@ -106,4 +106,4 @@ Giovanna Sobral da Silva – RA: 10424600 – 10424600@mackenzista.com.br
 
 Guilherme Soares Frota – RA: 10416060 – 10416060@mackenzista.com.br
 
-- **Professor orientador:** Carlos Scalabrini.  
+- **Professor orientador:** Gustavo Scalabrini Sampaio  
