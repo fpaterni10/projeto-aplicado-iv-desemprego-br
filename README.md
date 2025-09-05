@@ -1,12 +1,23 @@
 # PROJETO APLICADO IV - Ciência de Dados EaD - 2025/02
 
+
 <p align="right">
   <img src="docs/figuras/mackenzie_logo.jpg" alt="Universidade Presbiteriana Mackenzie" width="220"/>
 </p>
 
-**Objetivo:** Previsão da Taxa de Desocupação no Estado de São Paulo
+Previsão da Taxa de Desemprego na Região Metropolitana de São Paulo (2015–2019)
 
-Este projeto tem como objetivo prever a taxa de desocupação (desemprego) no estado de São Paulo com base em séries temporais históricas, utilizando modelos estatísticos como Prophet. A intenção é fornecer previsões que orientem políticas públicas, decisões estratégicas e estudos acadêmicos voltados ao mercado de trabalho paulista.
+Este projeto tem como objetivo prever mensalmente a taxa de desemprego na Região Metropolitana de São Paulo (RMSP) com base nos microdados da Pesquisa de Emprego e Desemprego (PED), em conjunto com variáveis macroeconômicas, como a taxa SELIC. O modelo é construído com técnicas de séries temporais e modelos SARIMA/SARIMAX, visando auxiliar a formulação de políticas públicas de geração de emprego e renda.
+
+
+**Objetivo Geral:**  
+  Desenvolver um modelo preditivo para estimar mensalmente a taxa de desemprego na RMSP, utilizando microdados da PED e variáveis econômicas agregadas.
+
+**Objetivos Específicos:**  
+  - Realizar análise exploratória da série temporal (comportamento, sazonalidade, tendências);  
+  - Verificar a estacionariedade da série com o teste de Dickey-Fuller;  
+  - Aplicar modelagens SARIMA e SARIMAX, comparando desempenho com e sem variáveis exógenas (ex: SELIC);  
+  - Avaliar métricas de desempenho das previsões (MAE, RMSE, MAPE).
 
 ## ODS Relacionados
 O projeto está diretamente alinhado ao **ODS 8 – Trabalho decente e crescimento econômico**, pois a taxa de desemprego é um indicador essencial desse objetivo.  
@@ -25,39 +36,40 @@ De forma complementar, também dialoga com:
 </p>
 
 
-## 📊 Fontes de Dados
-As informações foram extraídas do site do IBGE (Instituto Brasileiro de Geografia e Estatística), com base na Pesquisa Nacional por Amostra de Domicílios Contínua Trimestral (PNADC-T).
+## Fontes de Dados
+Descrição da Base de Dados
 
-Indicador: Taxa de desocupação no estado de São Paulo (todas as idades, ambos os sexos)
-Tabela SIDRA 4095: Taxa de desocupação por UF e trimestres móveis
-Formato: .xlsx
-Período: 1º trimestre de 2012 a 2º trimestre de 2024
-Frequência: Trimestral
-Fonte ABNT:
+- **Fonte principal:**  
+  Microdados da Pesquisa de Emprego e Desemprego (PED) – Região Metropolitana de São Paulo, disponibilizada pelo DIEESE e Fundação Seade.
 
-INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). Pesquisa Nacional por Amostra de Domicílios Contínua – PNADC (trimestral): Tabela 4095 – Taxa de desocupação, por UF. Disponível em: https://sidra.ibge.gov.br/tabela/4095
+- **Formato:** Arquivos `.SAV` (SPSS)
 
+- **Período:** Janeiro de 2015 a Março de 2019
 
-## 🧠 Metodologia
+- **Frequência:** Mensal
 
-Etapas:
-- Coleta e consolidação da série histórica
-- Análise exploratória da série temporal
-- Tendência
-- Estacionariedade
-- Picos atípicos (ex.: pandemia)
-- Pré-processamento
-- Preenchimento de dados ausentes
-- Testes de estacionariedade
+- **Segmentação:** Dados desagregados por situação de atividade, posição na ocupação, setor de atividade, escolaridade, entre outras variáveis sociodemográficas
 
-Modelagem:
-- Prophet (Meta/Facebook)
-- Avaliação dos resultados:
-- Métricas como MAE, MAPE, RMSE
-- Análise de resíduos  
+- **Fonte complementar:**  
+  Taxa SELIC histórica (mensal), disponibilizada via API pelo Banco Central do Brasil
 
 
-## 📅 Cronograma
+## Metodologia
+
+- Análise exploratória e estatística descritiva da série
+- Verificação de:
+  - Estacionariedade (ADF test)
+  - Linearidade
+  - Sazonalidade
+  - Média e variância ao longo do tempo
+- Modelos aplicados:
+  - **SARIMA** (série temporal univariada)
+  - **SARIMAX** (com variáveis exógenas, como SELIC)
+- Avaliação de desempenho com métricas: RMSE, MAE e MAPE
+- Comparações visuais das previsões e valores reais
+
+
+## Cronograma
 - **Etapa 1 (29/08):** Definição do tema, fontes de dados e estrutura do repositório.  
 - **Etapa 2 (26/09):** Referencial teórico, metodologia proposta e cronograma detalhado.  
 - **Etapa 3 (31/10):** Análise exploratória, implementação inicial do modelo, análise de resíduos.  
@@ -117,4 +129,13 @@ Giovanna Sobral da Silva – RA: 10424600 – 10424600@mackenzista.com.br
 
 Guilherme Soares Frota – RA: 10416060 – 10416060@mackenzista.com.br
 
-- **Professor orientador:** Gustavo Scalabrini Sampaio  
+- **Professor orientador:** Gustavo Scalabrini Sampaio
+
+
+## Referências
+
+DEPARTAMENTO INTERSINDICAL DE ESTATÍSTICA E ESTUDOS SOCIOECONÔMICOS (DIEESE). Microdados da Pesquisa de Emprego e Desemprego – Região Metropolitana de São Paulo. São Paulo: DIEESE, 2020. Disponível em: https://www.dieese.org.br/analiseped/pedRMSP.html. Acesso em: set. 2025.
+
+BANCO CENTRAL DO BRASIL (BACEN). Sistema Gerenciador de Séries Temporais – Taxa SELIC. Disponível em: https://www.bcb.gov.br/estatisticas/sgs. Acesso em: set. 2025.
+
+PREFEITURA DE SÃO PAULO. Relatórios Socioeconômicos da RMSP. Disponível em: https://www.prefeitura.sp.gov.br. Acesso em: set. 2025.
