@@ -26,7 +26,7 @@ De forma complementar, também dialoga com:
 
 
 ## 📊 Fontes de Dados
--As informações foram extraídas do site do IBGE (Instituto Brasileiro de Geografia e Estatística), com base na Pesquisa Nacional por Amostra de Domicílios Contínua Trimestral (PNADC-T).
+As informações foram extraídas do site do IBGE (Instituto Brasileiro de Geografia e Estatística), com base na Pesquisa Nacional por Amostra de Domicílios Contínua Trimestral (PNADC-T).
 
 Indicador: Taxa de desocupação no estado de São Paulo (todas as idades, ambos os sexos)
 Tabela SIDRA 4095: Taxa de desocupação por UF e trimestres móveis
@@ -36,12 +36,6 @@ Frequência: Trimestral
 Fonte ABNT:
 
 INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). Pesquisa Nacional por Amostra de Domicílios Contínua – PNADC (trimestral): Tabela 4095 – Taxa de desocupação, por UF. Disponível em: https://sidra.ibge.gov.br/tabela/4095
-
-
-- **Banco Central do Brasil – API SGS**  
-  - SELIC (série 4189).  
-  - [SGS API](https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados?formato=json)  
-
 
 
 ## 🧠 Metodologia
