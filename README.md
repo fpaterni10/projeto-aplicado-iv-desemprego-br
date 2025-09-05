@@ -5,7 +5,7 @@
   <img src="docs/figuras/mackenzie_logo.jpg" alt="Universidade Presbiteriana Mackenzie" width="220"/>
 </p>
 
-Previsão da Taxa de Desemprego na Região Metropolitana de São Paulo (2015–2019)
+# Previsão da Taxa de Desemprego na Região Metropolitana de São Paulo (2015–2019)
 
 Este projeto tem como objetivo prever mensalmente a taxa de desemprego na Região Metropolitana de São Paulo (RMSP) com base nos microdados da Pesquisa de Emprego e Desemprego (PED), em conjunto com variáveis macroeconômicas, como a taxa SELIC. O modelo é construído com técnicas de séries temporais e modelos SARIMA/SARIMAX, visando auxiliar a formulação de políticas públicas de geração de emprego e renda.
 
