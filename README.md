@@ -4,9 +4,11 @@
   <img src="docs/figuras/mackenzie_logo.jpg" alt="Universidade Presbiteriana Mackenzie" width="220"/>
 </p>
 
-**Objetivo:** Este projeto tem como objetivo analisar e prever a taxa de desocupação (desemprego) no Brasil, com recorte principal por faixa etária, utilizando modelos de séries temporais e aprendizado de máquina.  
+**Objetivo:** Previsão da Taxa de Desocupação no Estado de São Paulo
 
-## 🌍 ODS Relacionados
+Este projeto tem como objetivo prever a taxa de desocupação (desemprego) no estado de São Paulo com base em séries temporais históricas, utilizando modelos estatísticos como Prophet. A intenção é fornecer previsões que orientem políticas públicas, decisões estratégicas e estudos acadêmicos voltados ao mercado de trabalho paulista.
+
+## ODS Relacionados
 O projeto está diretamente alinhado ao **ODS 8 – Trabalho decente e crescimento econômico**, pois a taxa de desemprego é um indicador essencial desse objetivo.  
 
 <p align="center">
@@ -24,27 +26,41 @@ De forma complementar, também dialoga com:
 
 
 ## 📊 Fontes de Dados
-- **IBGE – PNAD Contínua Trimestral (PNADCT / SIDRA)**  
-  - Tabela 4094: Taxa de desocupação por grupos de idade.  
-  - Tabela 4093: Taxa de desocupação por sexo.  
-  - Tabela 4099: Subutilização da força de trabalho.  
-  - [Portal PNADCT Brasil](https://sidra.ibge.gov.br/home/pnadct/brasil)  
+-As informações foram extraídas do site do IBGE (Instituto Brasileiro de Geografia e Estatística), com base na Pesquisa Nacional por Amostra de Domicílios Contínua Trimestral (PNADC-T).
+
+Indicador: Taxa de desocupação no estado de São Paulo (todas as idades, ambos os sexos)
+Tabela SIDRA 4095: Taxa de desocupação por UF e trimestres móveis
+Formato: .xlsx
+Período: 1º trimestre de 2012 a 2º trimestre de 2024
+Frequência: Trimestral
+Fonte ABNT:
+
+INSTITUTO BRASILEIRO DE GEOGRAFIA E ESTATÍSTICA (IBGE). Pesquisa Nacional por Amostra de Domicílios Contínua – PNADC (trimestral): Tabela 4095 – Taxa de desocupação, por UF. Disponível em: https://sidra.ibge.gov.br/tabela/4095
+
 
 - **Banco Central do Brasil – API SGS**  
   - SELIC (série 4189).  
   - [SGS API](https://api.bcb.gov.br/dados/serie/bcdata.sgs.4189/dados?formato=json)  
 
-- **IBGE – IPCA (SNIPC/SIDRA)**  
+
 
 ## 🧠 Metodologia
-- **Análise Exploratória (EDA):** tendências, sazonalidade e choques (ex.: pandemia).  
-- **Modelos de Previsão:**  
-  - **SARIMA** (baseline).  
-  - **SARIMAX** (com variáveis exógenas: SELIC e IPCA).  
-- **Validação:**  
-  - Rolling-origin (janela deslizante).  
-  - Métricas: MAE, MAPE, sMAPE.  
-  - Análise de resíduos (ACF, PACF, Ljung-Box).  
+
+Etapas:
+- Coleta e consolidação da série histórica
+- Análise exploratória da série temporal
+- Tendência
+- Estacionariedade
+- Picos atípicos (ex.: pandemia)
+- Pré-processamento
+- Preenchimento de dados ausentes
+- Testes de estacionariedade
+
+Modelagem:
+- Prophet (Meta/Facebook)
+- Avaliação dos resultados:
+- Métricas como MAE, MAPE, RMSE
+- Análise de resíduos  
 
 
 ## 📅 Cronograma
@@ -55,29 +71,30 @@ De forma complementar, também dialoga com:
 
 
 ## 📂 Estrutura do Repositório
+
 ```
-projeto-aplicado-iv-desemprego-br/
+projeto-aplicado-iv-desemprego-sp/
 │
 ├── dataset/
-│   ├── brutos/              
-│   ├── tratados/            
-│   └── exog/                
+│   ├── brutos/
+│   ├── tratados/
+│   └── exog/
 │
 ├── docs/
-│   ├── artigo/              
-│   └── figuras/             
+│   ├── artigo/
+│   └── figuras/
 │
 ├── notebooks/
-│   ├── entrega1/            
-│   ├── entrega2/            
-│   ├── entrega3/            
-│   ├── entrega4/            
+│   ├── entrega1/
+│   ├── entrega2/
+│   ├── entrega3/
+│   ├── entrega4/
 │   └── 03_modelo_base.ipynb
 │
 ├── src/
-│   ├── features/            
-│   ├── models/              
-│   └── utils/               
+│   ├── features/
+│   ├── models/
+│   └── utils/
 │
 ├── .gitignore
 ├── LICENSE
