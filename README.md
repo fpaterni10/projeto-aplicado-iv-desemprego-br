@@ -1,30 +1,34 @@
 # PROJETO APLICADO IV - Ciência de Dados EaD - 2025/02
 
-
 <p align="right">
   <img src="docs/figuras/mackenzie_logo.jpg" alt="Universidade Presbiteriana Mackenzie" width="220"/>
 </p>
 
-# Previsão da Taxa de Desemprego de São Paulo (2015–2019)
+# Previsão da Taxa de Desemprego no Brasil (2012–2025)
 
-Este projeto tem como objetivo prever mensalmente a taxa de desemprego na Região Metropolitana de São Paulo (RMSP) com base nos microdados da Pesquisa de Emprego e Desemprego (PED), em conjunto com variáveis macroeconômicas, como a taxa SELIC. O modelo é construído com técnicas de séries temporais e modelos SARIMA/SARIMAX, visando auxiliar a formulação de políticas públicas de geração de emprego e renda.
+Este projeto tem como objetivo prever mensalmente a taxa de desocupação no Brasil com base nos microdados do **Cadastro Geral de Empregados e Desempregados (CAGED)**, em conjunto com variáveis macroeconômicas, como a **taxa SELIC**. O modelo é construído com técnicas de séries temporais (ARIMA, SARIMA, SARIMAX), visando fornecer subsídios para formulação de políticas públicas, análise socioeconômica e apoio à tomada de decisão.
 
+---
 
-**Objetivo Geral:**  
-  Desenvolver um modelo preditivo para estimar mensalmente a taxa de desemprego na RMSP, utilizando microdados da PED e variáveis econômicas agregadas.
+## Objetivo Geral
+Desenvolver um modelo preditivo capaz de estimar mensalmente a taxa de desocupação no Brasil para o ano de 2025, utilizando séries temporais alimentadas pelos microdados do CAGED e variáveis exógenas como a taxa SELIC.
 
-**Objetivos Específicos:**  
-  - Realizar análise exploratória da série temporal (comportamento, sazonalidade, tendências);  
-  - Verificar a estacionariedade da série com o teste de Dickey-Fuller;  
-  - Aplicar modelagens SARIMA e SARIMAX, comparando desempenho com e sem variáveis exógenas (ex: SELIC);  
-  - Avaliar métricas de desempenho das previsões (MAE, RMSE, MAPE).
+## Objetivos Específicos
+- Consolidar e tratar uma base mensal do CAGED (2012–2025).  
+- Incorporar variáveis macroeconômicas exógenas (SELIC).  
+- Verificar propriedades estatísticas da série (estacionariedade, sazonalidade, autocorrelações).  
+- Testar modelos de previsão (Naive, ARIMA, SARIMA e SARIMAX).  
+- Comparar o desempenho entre modelos univariados e multivariados.  
+- Validar previsões para 2025 com métricas de erro (RMSE, MAE, MAPE).  
+
+---
 
 ## ODS Relacionados
 O projeto está diretamente alinhado ao **ODS 8 – Trabalho decente e crescimento econômico**, pois a taxa de desemprego é um indicador essencial desse objetivo.  
 
 <p align="center">
   <img src="docs/figuras/sdg_08.png" alt="ODS 8 – Trabalho Decente e Crescimento Econômico" width="120"/>
-  </p>
+</p>
 
 De forma complementar, também dialoga com:  
 - **ODS 9 – Indústria, inovação e infraestrutura**, pela aplicação de ciência de dados e métodos de previsão como instrumentos de inovação analítica.  
@@ -35,38 +39,31 @@ De forma complementar, também dialoga com:
   <img src="docs/figuras/sdg_11.png" alt="ODS 11 – Cidades e Comunidades Sustentáveis" width="120"/>
 </p>
 
+---
 
 ## Fontes de Dados
-Descrição da Base de Dados
-
 - **Fonte principal:**  
-  Microdados da Pesquisa de Emprego e Desemprego (PED) – Região Metropolitana de São Paulo, disponibilizada pelo DIEESE e Fundação Seade.
+  Cadastro Geral de Empregados e Desempregados (CAGED) – Ministério do Trabalho e Emprego, 2012–2025.  
+  [http://pdet.mte.gov.br/](http://pdet.mte.gov.br/)  
 
-- **Formato:** Arquivos `.SAV` (SPSS)
-
-- **Período:** Janeiro de 2015 a Março de 2019
-
-- **Frequência:** Mensal
-
-- **Segmentação:** Dados desagregados por situação de atividade, posição na ocupação, setor de atividade, escolaridade, entre outras variáveis sociodemográficas
+- **Formato:** Arquivos `.csv` (microdados mensais).  
 
 - **Fonte complementar:**  
-  Taxa SELIC histórica (mensal), disponibilizada via API pelo Banco Central do Brasil
+  Taxa SELIC histórica (mensal), disponibilizada pelo **Banco Central do Brasil**.  
 
+---
 
 ## Metodologia
+- **Aquisição dos dados:** consolidação dos microdados CAGED e da taxa SELIC.  
+- **Pré-processamento:** padronização, tratamento de valores ausentes e outliers.  
+- **Análise exploratória:** decomposição da série, visualização de tendências e sazonalidade.  
+- **Modelagem:**  
+  - SARIMA para séries univariadas;  
+  - SARIMAX para incluir variáveis exógenas (SELIC).  
+- **Avaliação:** métricas RMSE, MAE e MAPE.  
+- **Validação temporal:** walk-forward e rolling forecast.  
 
-- Análise exploratória e estatística descritiva da série
-- Verificação de:
-  - Estacionariedade (ADF test)
-  - Linearidade
-  - Sazonalidade
-  - Média e variância ao longo do tempo
-- Modelos aplicados:
-  - **SARIMA** (série temporal univariada)
-  - **SARIMAX** (com variáveis exógenas, como SELIC)
-- Avaliação de desempenho com métricas: RMSE, MAE e MAPE
-- Comparações visuais das previsões e valores reais
+---
 
 
 ## Cronograma
