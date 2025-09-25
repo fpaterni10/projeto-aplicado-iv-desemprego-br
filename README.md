@@ -117,20 +117,6 @@ Clique nos links abaixo para abrir diretamente no Google Colab:
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) Entrega 3  
 - [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4.ipynb) Entrega 4  
 
----
-
-## 👥 Autores
-
-Aline Correa de Araújo – RA: 10414773 – 10414773@mackenzista.com.br
-
-Franciele Paterni – RA: 10414598 – 10414598@mackenzista.com.br
-
-Giovanna Sobral da Silva – RA: 10424600 – 10424600@mackenzista.com.br
-
-Guilherme Soares Frota – RA: 10416060 – 10416060@mackenzista.com.br
-
-- **Professor orientador:** Gustavo Scalabrini Sampaio
-
 
 ## Referências
 
