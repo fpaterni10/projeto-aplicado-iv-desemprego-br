@@ -139,3 +139,69 @@ DEPARTAMENTO INTERSINDICAL DE ESTATÍSTICA E ESTUDOS SOCIOECONÔMICOS (DIEESE). 
 BANCO CENTRAL DO BRASIL (BACEN). Sistema Gerenciador de Séries Temporais – Taxa SELIC. Disponível em: https://www.bcb.gov.br/estatisticas/sgs. Acesso em: set. 2025.
 
 PREFEITURA DE SÃO PAULO. Relatórios Socioeconômicos da RMSP. Disponível em: https://www.prefeitura.sp.gov.br. Acesso em: set. 2025.
+
+
+## 📂 Estrutura do Repositório
+
+```
+projeto-aplicado-iv-desemprego-sp/
+│
+├── dataset/
+│   ├── brutos/
+│   ├── tratados/
+│   └── exog/
+│
+├── docs/
+│   ├── artigo/
+│   └── figuras/
+│
+├── notebooks/
+│   ├── entrega1/
+│   ├── entrega2/
+│   ├── entrega3/
+│   ├── entrega4/
+│   └── 03_modelo_base.ipynb
+│
+├── src/
+│   ├── features/
+│   ├── models/
+│   └── utils/
+│
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
+
+
+## 🚀 Execução dos Notebooks no Colab
+Clique nos links abaixo para abrir diretamente no Google Colab:
+
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega1/cd_projeto_aplicado_IV.ipynb) Entrega 1  
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) Entrega 2  
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) Entrega 3  
+- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4.ipynb) Entrega 4  
+
+---
+
+## 👥 Autores
+
+Aline Correa de Araújo – RA: 10414773 – 10414773@mackenzista.com.br
+
+Franciele Paterni – RA: 10414598 – 10414598@mackenzista.com.br
+
+Giovanna Sobral da Silva – RA: 10424600 – 10424600@mackenzista.com.br
+
+Guilherme Soares Frota – RA: 10416060 – 10416060@mackenzista.com.br
+
+- **Professor orientador:** Gustavo Scalabrini Sampaio
+
+
+## Referências
+
+## Referências
+- HYNDMAN, R. J.; ATHANASOPOULOS, G. *Forecasting: principles and practice.* 2ª ed. Online.
+- OLIVEIRA, R.; ALBARRACIN, O. Y.; SILVA, G. R. *Introdução às Séries Temporais: Uma Abordagem Prática em Python.* 2023.
+- CASAGRANDE, D. L.; OLIVEIRA, F. R.; STUDART, G. *Métodos de previsão para a taxa de desemprego mensal: uma análise de séries temporais.* Revista de Economia, 2016.
+- BRASIL. Ministério do Trabalho e Emprego. **Cadastro Geral de Empregados e Desempregados – CAGED**. Brasília: MTE, 2012–2025. Disponível em: <http://pdet.mte.gov.br/>. Acesso em: set. 2025.  
+- BANCO CENTRAL DO BRASIL. *Taxa SELIC – histórico mensal.* Brasília, 2012–2025.  
