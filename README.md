@@ -70,61 +70,10 @@ Descrição da Base de Dados
 
 
 ## Cronograma
-- **Etapa 1 (29/08):** Definição do tema, fontes de dados e estrutura do repositório.  
+- **Etapa 1 (07/09):** Definição do tema, fontes de dados e estrutura do repositório.  
 - **Etapa 2 (26/09):** Referencial teórico, metodologia proposta e cronograma detalhado.  
 - **Etapa 3 (31/10):** Análise exploratória, implementação inicial do modelo, análise de resíduos.  
 - **Etapa 4 (28/11):** Modelos finais, previsões, discussão e entrega do artefato.  
-
-
-## 📂 Estrutura do Repositório
-
-```
-projeto-aplicado-iv-desemprego-sp/
-│
-├── dataset/
-│   ├── brutos/
-│   ├── tratados/
-│   └── exog/
-│
-├── docs/
-│   ├── artigo/
-│   └── figuras/
-│
-├── notebooks/
-│   ├── entrega1/
-│   ├── entrega2/
-│   ├── entrega3/
-│   ├── entrega4/
-│   └── 03_modelo_base.ipynb
-│
-├── src/
-│   ├── features/
-│   ├── models/
-│   └── utils/
-│
-├── .gitignore
-├── LICENSE
-├── README.md
-└── requirements.txt
-```
-
-
-## 🚀 Execução dos Notebooks no Colab
-Clique nos links abaixo para abrir diretamente no Google Colab:
-
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega1/cd_projeto_aplicado_IV.ipynb) Entrega 1  
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) Entrega 2  
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) Entrega 3  
-- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4.ipynb) Entrega 4  
-
-
-## Referências
-
-DEPARTAMENTO INTERSINDICAL DE ESTATÍSTICA E ESTUDOS SOCIOECONÔMICOS (DIEESE). Microdados da Pesquisa de Emprego e Desemprego – Região Metropolitana de São Paulo. São Paulo: DIEESE, 2020. Disponível em: https://www.dieese.org.br/analiseped/pedRMSP.html. Acesso em: set. 2025.
-
-BANCO CENTRAL DO BRASIL (BACEN). Sistema Gerenciador de Séries Temporais – Taxa SELIC. Disponível em: https://www.bcb.gov.br/estatisticas/sgs. Acesso em: set. 2025.
-
-PREFEITURA DE SÃO PAULO. Relatórios Socioeconômicos da RMSP. Disponível em: https://www.prefeitura.sp.gov.br. Acesso em: set. 2025.
 
 
 ## 📂 Estrutura do Repositório
