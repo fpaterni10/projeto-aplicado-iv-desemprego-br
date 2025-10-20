@@ -48,8 +48,8 @@ De forma complementar, também dialoga com:
 | Etapa | Descrição | GitHub | Colab | nbviewer |
 |:--:|---|---|---|---|
 | **1** | Escopo, fontes de dados, documento inicial | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega1/cd_projeto_aplicado_IV.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega1/cd_projeto_aplicado_IV.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega1/cd_projeto_aplicado_IV.ipynb) |
-| **2** | EDA, componentes da série, pipeline | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) |
-| **3** | Modelagem inicial (SARIMAX e LGBM), avaliação e comparação | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) |
+| **2** | Referêncial teórico, pipeline da solução, cronograma | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb) |
+| **3** | EDA, Pré-processamento, modelagem inicial (SARIMAX e LGBM), avaliação e comparação | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb) |
 
 ---
 
@@ -81,50 +81,6 @@ De forma complementar, também dialoga com:
 
 ---
 
-## Resultados (Etapa 3)
-
-| Modelo | MAE | RMSE | MAPE (%) | Observação |
-|:--|--:|--:|--:|:--|
-| **LGBM (calibrado)** | **0,2966** | **0,3481** | **4,90** | Melhor desempenho geral |
-| **SARIMAX (1,1,2)×(1,0,1,4)** | 0,3620 | 0,4330 | 5,54 | Baseline estatístico interpretável |
-
----
-
-
-## Cronograma
-
-### Etapas 1 e 2: (20/08/2025 — 26/09/2025)
-| Nº | Atividade | Responsável(s) | Início | Término | Status |
-|----|-----------|----------------|-------|---------|--------|
-| 1 | Definição do título e escopo do projeto | Todos | 20/08/2025 | 07/09/2025 | **Concluído** |
-| 2 | Identificação do grupo (nomes e matrículas) | Todos | 20/08/2025 | 07/09/2025 | **Concluído** |
-| 3 | Introdução, Motivação e Justificativa | Todos | 20/08/2025 | 07/09/2025 | **Concluído** |
-| 4 | Objetivo geral e objetivos específicos | Todos | 20/08/2025 | 07/09/2025 | **Concluído** |
-| 5 | Descrição da base e variáveis exógenas | Franciele / Guilherme | 20/08/2025 | 07/09/2025 | **Concluído** |
-| 6 | Justificativa metodológica e bibliografia inicial | Aline / Giovanna | 20/08/2025 | 07/09/2025 | **Concluído** |
-| 7 | Planejamento (pipeline + subetapas) | Todos | 20/08/2025 | 25/09/2025 | **Concluído** |
-| 8 | Entrega 2 (introdução, referencial, pipeline, cronograma) | Todos | 10/09/2025 | 25/09/2025 | **Concluído** |
-
-### Etapa 3: Implementação Parcial (25/09/2025 — 31/10/2025)
-| Nº | Atividade | Responsável(s) | Início | Término | Status |
-|----|-----------|----------------|-------|---------|--------|
-| 9 | Aquisição e integração dos brutos (CAGED + SELIC) | Guilherme / Fran | 25/09/2025 | 28/09/2025 | **Concluído** |
-| 10 | Pré-processamento e série consolidada | Fran / Aline | 29/09/2025 | 06/10/2025 | **Concluído** |
-| 11 | Engenharia de *features* exógenas | Guilherme / Giovanna | 29/09/2025 | 06/10/2025 | **Planejado** |
-| 11.1 | **EDA e pré-processamento** | — | 05/10/2025 | 07/10/2025 | **Concluído** |
-| 11.2 | **Modelo LGBM** | — | 07/10/2025 | 09/10/2025 | **Concluído** |
-| 11.3 | **Modelo SARIMAX** | — | 09/10/2025 | 11/10/2025 | **Concluído** |
-| 11.4 | **Comparação e discussão** | — | 11/10/2025 | 12/10/2025 | **Concluído** |
-| 11.5 | **Revisão, cronograma e referências** | — | 13/10/2025 | 14/10/2025 | **Concluído** |
-| 12 | Visualizações (EDA) | Giovanna / Aline | 07/10/2025 | 13/10/2025 | **Concluído** |
-| 13 | Diagrama da solução (pipeline) | Todos | 07/10/2025 | 10/10/2025 | **Concluído** |
-| 14 | Definição final dos modelos candidatos | Todos | 14/10/2025 | 16/10/2025 | **Concluído** |
-| 15 | Treinamento inicial (clássicos) | Aline / Guilherme | 17/10/2025 | 20/10/2025 | **Planejado** |
-| 16 | Avaliação preliminar e ajustes | Giovanna / Fran | 21/10/2025 | 24/10/2025 | **Planejado** |
-| 17 | Consolidação da Entrega 3 (notebook) | Todos | 29/10/2025 | 31/10/2025 | **Planejado** |
-
----
-
 ## 📂 Estrutura do Repositório
 ```
 projeto-aplicado-iv-desemprego-br/
@@ -149,12 +105,6 @@ projeto-aplicado-iv-desemprego-br/
 └── requirements.txt
 ```
 ---
-
-
-## 🚀 Execução no Colab (atalhos rápidos)
-- **Etapa 1:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega1/cd_projeto_aplicado_IV.ipynb)  
-- **Etapa 2:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega2/cd_projeto_aplicado_IV_entrega_2.ipynb)  
-- **Etapa 3:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3.ipynb)  
 
 ## 👥 Autores
 
