@@ -152,7 +152,6 @@ projeto-aplicado-iv-desemprego-br/
 ```
 ---
 
----
 
 ## 🚀 Execução no Colab (atalhos rápidos)
 - **Etapa 1:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega1/cd_projeto_aplicado_IV.ipynb)  
