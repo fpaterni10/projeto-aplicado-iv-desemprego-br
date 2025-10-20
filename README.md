@@ -6,20 +6,21 @@
 
 # Previsão da Taxa de Desemprego no Brasil (2012–2025)
 
-Este projeto tem como objetivo prever a **taxa de desocupação no Brasil** com base nos microdados do **Cadastro Geral de Empregados e Desempregados (CAGED)**, em conjunto com variáveis macroeconômicas, como a **taxa SELIC**, além de indicadores da **PNAD Contínua (IBGE)**. O modelo é construído com técnicas de séries temporais (ARIMA, SARIMA, SARIMAX e regressão de gradiente), visando fornecer subsídios para formulação de políticas públicas, análise socioeconômica e apoio à tomada de decisão.
+Este projeto tem como objetivo prever a **taxa de desocupação no Brasil** com base nos microdados do **Cadastro Geral de Empregados e Desempregados (CAGED)**, em conjunto com variáveis macroeconômicas como a **taxa SELIC** e indicadores da **PNAD Contínua (IBGE)**.  
+O modelo é construído com técnicas de **séries temporais** (ARIMA, SARIMA, SARIMAX e regressão de gradiente), visando fornecer subsídios para **políticas públicas, análise socioeconômica e apoio à tomada de decisão**.
 
 ---
 
 ## Objetivo Geral
-Desenvolver um **modelo preditivo** capaz de estimar a taxa de desocupação no Brasil para o período recente, integrando informações do **mercado formal** (CAGED) e **condições monetárias** (SELIC), com apoio da **PNAD Contínua** para validação e comparação.
+Desenvolver um **modelo preditivo** capaz de estimar a taxa de desocupação no Brasil para o período recente, integrando informações do **mercado formal (CAGED)** e **condições monetárias (SELIC)**, com apoio da **PNAD Contínua** para validação e comparação.
 
 ## Objetivos Específicos
-- Consolidar e tratar uma base **2012–2025** com CAGED, PNAD e SELIC.  
-- Incorporar variáveis exógenas (SELIC e derivadas do CAGED) e **engenharia de atributos** (lags, médias móveis, dummies sazonais/estruturais).  
-- Verificar propriedades estatísticas (estacionariedade, sazonalidade, autocorrelações) via **ADF, ACF e PACF**.  
-- Testar modelos de previsão (**Naive, ARIMA, SARIMA, SARIMAX** e **LGBM Regressor**).  
-- Comparar desempenho de **modelos estatísticos** e de **machine learning**.  
-- Validar previsões com **RMSE, MAE e MAPE** e análise de resíduos.
+- Consolidar e tratar uma base **2012–2025** com CAGED, PNAD e SELIC (frequência trimestral).  
+- Incorporar variáveis exógenas e engenharia de atributos (lags, médias móveis, dummies sazonais e estruturais).  
+- Verificar propriedades estatísticas da série (estacionariedade, sazonalidade, autocorrelações).  
+- Testar modelos de previsão (**Naive, ARIMA, SARIMA, SARIMAX, LGBM Regressor**).  
+- Comparar desempenho entre modelos estatísticos e de machine learning.  
+- Validar previsões com métricas de erro (**RMSE, MAE, MAPE**) e análise de resíduos.
 
 ---
 
@@ -31,7 +32,7 @@ O projeto está diretamente alinhado ao **ODS 8 – Trabalho decente e crescimen
 </p>
 
 De forma complementar, também dialoga com:  
-- **ODS 9 – Indústria, inovação e infraestrutura:** uso de ciência de dados aplicada como inovação tecnológica.  
+- **ODS 9 – Indústria, inovação e infraestrutura:** uso de ciência de dados como inovação tecnológica.  
 - **ODS 11 – Cidades e comunidades sustentáveis:** o desemprego impacta diretamente a qualidade de vida nas cidades.
 
 <p align="center">
@@ -42,7 +43,6 @@ De forma complementar, também dialoga com:
 ---
 
 ## 🔗 Notebooks (Etapas)
-
 > Dica: se o *viewer* do GitHub oscilar, use **Colab** ou **nbviewer**.
 
 | Etapa | Descrição | GitHub | Colab | nbviewer |
@@ -55,26 +55,25 @@ De forma complementar, também dialoga com:
 
 ## Fontes de Dados
 - **CAGED – Cadastro Geral de Empregados e Desempregados** (Ministério do Trabalho e Emprego), 2012–2025.  
-  Formato: `.csv` (microdados mensais; agregações para análises).  
+  Formato: `.csv` (microdados mensais; agregações trimestrais).  
 - **PNAD Contínua – Pesquisa Nacional por Amostra de Domicílios Contínua** (IBGE), 2012–2025.  
-  Formato: `.csv`/`.xlsx` (trimestral).  
+  Formato: `.csv` / `.xlsx` (trimestral).  
 - **Taxa SELIC – Banco Central do Brasil (SGS)**, 2012–2025.  
-  Formato: `.csv` (diária → consolidado mensal/trimestral).
+  Formato: `.csv` (diária → média mensal/trimestral).
 
-> Harmonização temporal: as séries são **padronizadas para frequência trimestral** quando necessário para comparação e modelagem.
+> Todas as bases são **oficiais e públicas**, padronizadas em **frequência trimestral**.
 
 ---
 
-## Metodologia (visão geral)
-
-- **Aquisição:** CAGED (admissões, desligamentos, saldo), PNAD (taxa de desocupação) e SELIC (SGS).  
-- **Pré-processamento:** padronização de datas; tratamento de ausentes; *outliers*; features derivadas: `saldo`, `caged_roll3`, `caged_roll3_asinh`, **lags**, **dummies sazonais/estruturais**.  
-- **EDA e Análise Temporal:** **ADF**, **ACF/PACF**, **decomposição** (tendência, sazonalidade e ruído).  
+## Metodologia
+- **Aquisição:** CAGED (admissões, desligamentos, saldo), PNAD (taxa de desocupação), SELIC (SGS).  
+- **Pré-processamento:** padronização temporal, remoção de ausentes/outliers, criação de variáveis (`saldo`, `caged_roll3`, `asinh`, *lags* e dummies).  
+- **Análise temporal:** ADF, ACF, PACF e decomposição sazonal.  
 - **Modelagem:**  
-  - **SARIMAX** — (1,1,2)×(1,0,1,4) com exógenas do CAGED;  
-  - **LGBM Regressor** — com *lags* e *rolling features*.  
-- **Validação:** **holdout temporal** (Etapa 3); comparação por **MAE, RMSE, MAPE**.  
-- **Visualização:** gráficos **Real vs. Pred** e **Resíduos**; ACF dos resíduos.
+  - **SARIMAX (1,1,2)×(1,0,1,4)** com exógenas do CAGED;  
+  - **LGBM Regressor** com *rolling features* e defasagens.  
+- **Validação:** *Holdout* temporal; métricas RMSE, MAE e MAPE.  
+- **Visualização:** Gráficos “Real vs. Pred”, resíduos e ACF dos resíduos.
 
 <p align="center">
   <img src="docs/figuras/pipeline_etapa3_v3.png" width="720" alt="Pipeline da Solução - Etapa 3"/>
@@ -82,16 +81,15 @@ De forma complementar, também dialoga com:
 
 ---
 
-## Resultados – Etapa 3 (resumo)
+## Resultados (Etapa 3)
 
 | Modelo | MAE | RMSE | MAPE (%) | Observação |
 |:--|--:|--:|--:|:--|
 | **LGBM (calibrado)** | **0,2966** | **0,3481** | **4,90** | Melhor desempenho geral |
 | **SARIMAX (1,1,2)×(1,0,1,4)** | 0,3620 | 0,4330 | 5,54 | Baseline estatístico interpretável |
 
-> Gráficos e detalhes no notebook da **Etapa 3**: Real vs. Pred (calibrado), Resíduos, ACF/PACF e decomposições.
-
 ---
+
 
 ## Cronograma
 
