@@ -1,0 +1,192 @@
+PROJETO APLICADO IV — Mapeamento: figura -> código que a gera
+================================================================
+Observação: onde a figura não é gerada na versão atual do notebook, deixo um bloco
+de código equivalente para reproduzir/garantir reprodutibilidade.
+
+1) decomp_tx_desocupacao.png
+   Código essencial (no notebook):
+from statsmodels.tsa.seasonal import seasonal_decompose
+s = df_model["tx_desocupacao"].asfreq("Q-DEC")
+dec = seasonal_decompose(s, period=4, model="additive", two_sided=False)
+fig = dec.plot(); fig.suptitle("Decomposição - tx_desocupacao")
+fig.savefig("docs/figuras/decomp_tx_desocupacao.png", dpi=160, bbox_inches="tight")
+
+2) acf_tx_desocupacao.png
+   Código essencial (no notebook):
+import statsmodels.api as sm
+fig = sm.graphics.tsa.plot_acf(df_model["tx_desocupacao"], lags=12)
+plt.title("ACF - tx_desocupacao")
+fig.savefig("docs/figuras/acf_tx_desocupacao.png", dpi=160, bbox_inches="tight")
+
+3) pacf_tx_desocupacao.png
+   Código essencial (no notebook):
+fig = sm.graphics.tsa.plot_pacf(df_model["tx_desocupacao"], lags=12, method="ywm")
+plt.title("PACF - tx_desocupacao")
+fig.savefig("docs/figuras/pacf_tx_desocupacao.png", dpi=160, bbox_inches="tight")
+
+4) decomp_caged_saldo_tri.png
+   Código essencial (no notebook):
+s = df_model["caged_saldo_tri"].asfreq("Q-DEC")
+dec = seasonal_decompose(s, period=4, model="additive", two_sided=False)
+fig = dec.plot(); fig.suptitle("Decomposição - caged_saldo_tri")
+fig.savefig("docs/figuras/decomp_caged_saldo_tri.png", dpi=160, bbox_inches="tight")
+
+5) acf_caged_saldo_tri.png
+   Código essencial (no notebook):
+fig = sm.graphics.tsa.plot_acf(df_model["caged_saldo_tri"], lags=12)
+plt.title("ACF - caged_saldo_tri")
+fig.savefig("docs/figuras/acf_caged_saldo_tri.png", dpi=160, bbox_inches="tight")
+
+6) pacf_caged_saldo_tri.png
+   Código essencial (no notebook):
+fig = sm.graphics.tsa.plot_pacf(df_model["caged_saldo_tri"], lags=12, method="ywm")
+plt.title("PACF - caged_saldo_tri")
+fig.savefig("docs/figuras/pacf_caged_saldo_tri.png", dpi=160, bbox_inches="tight")
+
+7) acf_caged_roll3.png
+   Código essencial (no notebook):
+fig = sm.graphics.tsa.plot_acf(df_model["caged_roll3"], lags=12)
+plt.title("ACF - caged_roll3")
+fig.savefig("docs/figuras/acf_caged_roll3.png", dpi=160, bbox_inches="tight")
+
+8) pacf_caged_roll3.png
+   Código essencial (no notebook):
+fig = sm.graphics.tsa.plot_pacf(df_model["caged_roll3"], lags=12, method="ywm")
+plt.title("PACF - caged_roll3")
+fig.savefig("docs/figuras/pacf_caged_roll3.png", dpi=160, bbox_inches="tight")
+
+9) acf_caged_roll3_asinh.png
+   Código essencial (no notebook):
+fig = sm.graphics.tsa.plot_acf(df_model["caged_roll3_asinh"], lags=12)
+plt.title("ACF - caged_roll3_asinh")
+fig.savefig("docs/figuras/acf_caged_roll3_asinh.png", dpi=160, bbox_inches="tight")
+
+10) pacf_caged_roll3_asinh.png
+    Código essencial (no notebook):
+fig = sm.graphics.tsa.plot_pacf(df_model["caged_roll3_asinh"], lags=12, method="ywm")
+plt.title("PACF - caged_roll3_asinh")
+fig.savefig("docs/figuras/pacf_caged_roll3_asinh.png", dpi=160, bbox_inches="tight")
+
+11) real_vs_pred_calibrado.png (LGBM)
+    Código essencial (no notebook):
+from lightgbm import LGBMRegressor
+features_cal = ['caged_roll3_asinh','caged_saldo_tri','Q_1','Q_2','Q_3','Q_4','post_2021']
+train_lgb, test_lgb = temporal_holdout(df_model, n_test=4)  # ou com CUT_END
+X_tr, y_tr = train_lgb[features_cal], train_lgb['tx_desocupacao'].to_numpy()
+X_te, y_te = test_lgb[features_cal], test_lgb['tx_desocupacao'].to_numpy()
+
+lgbm = LGBMRegressor(n_estimators=400, learning_rate=0.05, num_leaves=31, max_depth=4,
+                     min_child_samples=20, subsample=0.8, colsample_bytree=0.8,
+                     reg_lambda=0.1, random_state=42)
+lgbm.fit(X_tr, y_tr)
+bias = (y_tr[-4:] - lgbm.predict(X_tr)[-4:]).mean()
+pred_lgb = lgbm.predict(X_te) + bias
+
+# Grava figura
+t = pd.to_datetime(test_lgb['data'])
+fig, ax = plt.subplots(); ax.plot(t, y_te, label='Real'); ax.plot(t, pred_lgb, label='LGBM (calibrado)')
+ax.legend(); ax.set_title('Real vs Pred — LGBM (calibrado)'); fig.tight_layout()
+fig.savefig('docs/figuras/real_vs_pred_calibrado.png', dpi=160, bbox_inches='tight')
+
+12) residuos_calibrado.png (LGBM)
+    Código essencial (no notebook):
+resid_lgb = y_te - pred_lgb
+fig = plt.figure(figsize=(7,3.5)); plt.plot(resid_lgb); plt.title('Resíduos — LGBM (calibrado)')
+fig.savefig('docs/figuras/residuos_calibrado.png', dpi=160, bbox_inches='tight')
+
+13) sarimax_real_vs_pred.png
+    Código essencial (no notebook):
+from statsmodels.tsa.statespace.sarimax import SARIMAX
+exog = ['caged_saldo_tri']
+train_sar, test_sar = temporal_holdout(df_model, n_test=4)
+y_tr = train_sar['tx_desocupacao'].asfreq('Q-DEC'); y_te = test_sar['tx_desocupacao'].asfreq('Q-DEC')
+X_tr = train_sar[exog].asfreq('Q-DEC');            X_te = test_sar[exog].asfreq('Q-DEC')
+
+sar = SARIMAX(endog=y_tr, exog=X_tr, order=(1,1,2), seasonal_order=(1,0,1,4),
+              enforce_stationarity=False, enforce_invertibility=False).fit(disp=False, maxiter=500)
+pred_sar = sar.get_forecast(steps=len(y_te), exog=X_te).predicted_mean
+
+t = pd.to_datetime(test_sar['data'])
+fig, ax = plt.subplots(); ax.plot(t, y_te.values, label='Real'); ax.plot(t, pred_sar.values, label='SARIMAX')
+ax.legend(); ax.set_title('Real vs Pred — SARIMAX (baseline)'); fig.tight_layout()
+fig.savefig('docs/figuras/sarimax_real_vs_pred.png', dpi=160, bbox_inches='tight')
+
+14) sarimax_residuos.png e 15) sarimax_residuos_acf.png
+    Código essencial (no notebook):
+resid = sar.resid.dropna()
+# Série de resíduos
+fig1 = plt.figure(figsize=(7,3.5)); plt.plot(resid.values); plt.title('Resíduos (SARIMAX)')
+fig1.savefig('docs/figuras/sarimax_residuos.png', dpi=160, bbox_inches='tight')
+# ACF dos resíduos
+fig2 = plt.figure(); ax = plt.gca()
+sm.graphics.tsa.plot_acf(resid.values, lags=12, ax=ax); ax.set_title('ACF dos Resíduos (SARIMAX)'); fig2.tight_layout()
+fig2.savefig('docs/figuras/sarimax_residuos_acf.png', dpi=160, bbox_inches='tight')
+
+16) real_vs_pred_holdout.png (comparativo no holdout)
+    Código essencial (no notebook):
+# Depois de obter y_test, pred_lgb, pred_sar
+t = test_lgb['data'] if 'data' in test_lgb.columns else test_lgb.index.to_timestamp()
+fig, ax = plt.subplots(figsize=(7,5))
+ax.plot(t, y_test,   label='Real'); ax.plot(t, pred_lgb, label='LGBM'); ax.plot(t, pred_sar, label='SARIMAX')
+ax.set_title('Real vs Pred — Holdout trimestral (últimos 4 trimestres)'); ax.legend(); fig.tight_layout()
+fig.savefig('docs/figuras/real_vs_pred_holdout.png', dpi=160, bbox_inches='tight')
+
+17) lgbm_fitted_last24.png  (opcional; não localizado na versão atual do notebook)
+    Sugestão para reproduzir:
+# Últimos 24 trimestres (ou janela desejada)
+hist = df_model.sort_values('data').tail(24)
+Xh = hist[features_cal]; yh = hist['tx_desocupacao'].to_numpy()
+yhat_h = lgbm.predict(Xh) + bias
+t = pd.to_datetime(hist['data'])
+fig, ax = plt.subplots(); ax.plot(t, yh, label='Real'); ax.plot(t, yhat_h, label='LGBM (calibrado)')
+ax.legend(); ax.set_title('LGBM — últimos 24 trimestres'); fig.tight_layout()
+fig.savefig('docs/figuras/lgbm_fitted_last24.png', dpi=160, bbox_inches='tight')
+
+18) fullseries_pred_biascorr.png  (opcional; não localizado na versão atual do notebook)
+    Sugestão para reproduzir:
+# Previsão in-sample + bias correction em toda a série
+df_sorted = df_model.sort_values('data')
+Xall = df_sorted[features_cal]; yall = df_sorted['tx_desocupacao'].to_numpy()
+yhat_all = lgbm.predict(Xall) + bias
+t = pd.to_datetime(df_sorted['data'])
+fig, ax = plt.subplots(); ax.plot(t, yall, label='Real'); ax.plot(t, yhat_all, label='LGBM (bias corr.)')
+ax.legend(); ax.set_title('LGBM — toda a série (bias correction)'); fig.tight_layout()
+fig.savefig('docs/figuras/fullseries_pred_biascorr.png', dpi=160, bbox_inches='tight')
+
+19) compare_last24.png  (opcional; não localizado na versão atual do notebook)
+    Sugestão para reproduzir (comparação LGBM × SARIMAX nos últimos 24 trimestres):
+win = df_model.sort_values('data').tail(24)
+t = pd.to_datetime(win['data'])
+# Reajuste SARIMAX/LGBM na janela 'win' se necessário, ou só plotar os yhat já obtidos
+fig, ax = plt.subplots(); ax.plot(t, win['tx_desocupacao'], label='Real')
+ax.plot(t, lgbm.predict(win[features_cal])+bias, label='LGBM (calib.)')
+# Se quiser SARIMAX nessa janela:
+sar_w = SARIMAX(win['tx_desocupacao'].asfreq('Q-DEC'), exog=win[['caged_saldo_tri']].asfreq('Q-DEC'),
+                order=(1,1,2), seasonal_order=(1,0,1,4),
+                enforce_stationarity=False, enforce_invertibility=False).fit(disp=False, maxiter=500)
+ax.plot(t, sar_w.fittedvalues, label='SARIMAX (fitted)')
+ax.legend(); ax.set_title('Comparação — últimos 24 trimestres'); fig.tight_layout()
+fig.savefig('docs/figuras/compare_last24.png', dpi=160, bbox_inches='tight')
+
+20) quick_report_plot.png  (painel-resumo; não localizado na versão atual)
+    Sugestão para reproduzir (multi-subplot):
+fig, axs = plt.subplots(2,2, figsize=(10,7))
+# (1) Série real
+axs[0,0].plot(pd.to_datetime(df_model['data']), df_model['tx_desocupacao']); axs[0,0].set_title('Série real')
+# (2) Holdout — LGBM
+axs[0,1].plot(pd.to_datetime(test_lgb['data']), y_te, label='Real')
+axs[0,1].plot(pd.to_datetime(test_lgb['data']), pred_lgb, label='LGBM'); axs[0,1].legend(); axs[0,1].set_title('Holdout LGBM')
+# (3) Holdout — SARIMAX
+axs[1,0].plot(pd.to_datetime(test_sar['data']), y_te.values, label='Real')
+axs[1,0].plot(pd.to_datetime(test_sar['data']), pred_sar.values, label='SARIMAX'); axs[1,0].legend(); axs[1,0].set_title('Holdout SARIMAX')
+# (4) Resíduos SARIMAX
+axs[1,1].plot(sar.resid.dropna().values); axs[1,1].set_title('Resíduos SARIMAX')
+fig.tight_layout(); fig.savefig('docs/figuras/quick_report_plot.png', dpi=160, bbox_inches='tight')
+
+21) diagrama_de_solucao_pipeline_1.png (diagrama estático)
+    Observação: imagem estática adicionada ao repositório.
+    Como inserir no notebook:
+from IPython.display import Image, display
+display(Image(url="https://raw.githubusercontent.com/fpaterni10/projeto-aplicado-iv-desemprego-br/main/docs/figuras/diagrama_de_solucao_pipeline_1.png"))
+# ou via caminho relativo:
+# ![Diagrama](../../docs/figuras/diagrama_de_solucao_pipeline_1.png)
