@@ -77,7 +77,7 @@ De forma complementar, também dialoga com:
 - **Visualização:** Gráficos “Real vs. Pred”, resíduos e ACF dos resíduos.
 
 <p align="center">
-  <img src="docs/figuras/pipeline_etapa3_v3.png" width="720" alt="Pipeline da Solução - Etapa 3"/>
+  <img src="docs/figuras/diagrama_de_solucao_pipeline_1.png" width="720" alt="Diagrama da Solução"/>
 </p>
 
 ---
