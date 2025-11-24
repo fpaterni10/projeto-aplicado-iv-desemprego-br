@@ -54,7 +54,6 @@ De forma complementar, também dialoga com:
 
 ---
 
-
 ## Fontes de Dados
 - **CAGED – Cadastro Geral de Empregados e Desempregados** (Ministério do Trabalho e Emprego), 2012–2025.  
   Formato: `.csv` (microdados mensais; agregações trimestrais).  
