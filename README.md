@@ -53,7 +53,7 @@ De forma complementar, também dialoga com:
 | **4** | Resultados, Discussões, Conslusões e Apresentação | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4_.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4_.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4_.ipynb) |
 
 
-## 📄 Artigo Completo
+## 📄 Artigo Completo (LaTeX)
 
 <p>
   <a href="https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/docs/artigo/Predi%C3%A7%C3%A3o%20da%20Taxa%20de%20Desemprego%20no%20Brasil%20S%C3%A9ries%20Temporais%20com%20Dados%20do%20CAGED%2C%20PNAD%20e%20SELIC.pdf" target="_blank">
