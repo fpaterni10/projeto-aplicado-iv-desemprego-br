@@ -75,6 +75,11 @@ De forma complementar, também dialoga com:
 
 [![Baixar PPTX](https://img.shields.io/badge/Baixar%20Apresentação-PPTX-orange?style=for-the-badge)](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/docs/artigo/Apresenta%C3%A7%C3%A3o.pptx)
 
+## 🎥 Vídeo da apresentação
+<p>
+
+[![Assistir no YouTube](https://img.shields.io/badge/YouTube-Apresentação-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/watch?v=-nH_PXt52Vg)
+
 ---
 
 
