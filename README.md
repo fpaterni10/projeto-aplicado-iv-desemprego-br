@@ -61,7 +61,15 @@ De forma complementar, também dialoga com:
   </a>
 </p>
 
+## 📊 Apresentação do projeto
+<p>
+
+[![Abrir PDF](https://img.shields.io/badge/Abrir%20Apresentação-PDF-blue?style=for-the-badge)](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/docs/artigo/Apresenta%C3%A7%C3%A3o.pdf)
+
+[![Baixar PPTX](https://img.shields.io/badge/Baixar%20Apresentação-PPTX-orange?style=for-the-badge)](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/docs/artigo/Apresenta%C3%A7%C3%A3o.pptx)
+
 ---
+
 
 ## Fontes de Dados
 - **CAGED – Cadastro Geral de Empregados e Desempregados** (Ministério do Trabalho e Emprego), 2012–2025.  
