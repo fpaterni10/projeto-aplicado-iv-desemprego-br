@@ -52,6 +52,13 @@ De forma complementar, também dialoga com:
 | **3** | EDA, Pré-processamento, modelagem inicial (SARIMAX e LGBM), avaliação e comparação | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3_.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3_.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega3/cd_projeto_aplicado_IV_entrega_3_.ipynb) |
 | **4** | Resultados, Discussões, Conslusões e Apresentação | [Abrir](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4_.ipynb) | [![Abrir no Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4_.ipynb) | [Ver](https://nbviewer.org/github/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/notebooks/entrega4/cd_projeto_aplicado_IV_entrega_4_.ipynb) |
 
+## 📂 Base de dados utilizada
+<p>
+
+[![Base de Dados](https://img.shields.io/badge/Baixar%20Base%20de%20Dados-CSV-green?style=for-the-badge)](https://github.com/fpaterni10/projeto-aplicado-iv-desemprego-br/blob/main/dataset/tratados/caged_pnad_selic_trimestral.csv)
+
+---
+
 
 ## 📄 Artigo Completo (LaTeX)
 
